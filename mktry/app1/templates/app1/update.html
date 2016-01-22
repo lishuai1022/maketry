@@ -10,49 +10,14 @@
     <script type="text/javascript" src="http://jic.makepolo.net/js/jquery/jquery-1.4.2.js"></script>
 </head>
 <body>
-
-<h3>img list</h3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/app1/add/">add</a>
-{% if content_list %}
+<form action="/app1/update1/?id={{ id }}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
 <div class="maink">
 <table width="100%" border="0" cellspacing="0" cellpadding="10" class="listsearch">
-<tr>
-    <td>id</td>
-    <td>title</td>
-    <td>img_url</td>
-    <td>link_url</td>
-	<td>sort</td>
-    <td>type</td>
-    <td>state</td>
-	<td>createtime</td>
-	<td>modifytime</td>
-	<td>operate</td>
-  </tr>
-{% for con in content_list %}
-  <tr>
-    <td>{{con.id}}</td>
-    <td>{{con.title}}</td>
-    <td><img src="http://jic.makepolo.net{{con.img_url}}" style="width:100px;height:50px"/></td>
-	<td>{{con.link_url}}</td>
-	<td>{{con.sort}}</td>
-	<td>{{ con.type }}</td>
-	<td>{{ con.state }}</td>
-	<td>{{con.createdate}}</td>
-	<td>{{con.modifydate}}</td>
-	<td>
-	<a href="/app1/update/?id={{ con.id }}">update</a>&nbsp;&nbsp;
-	<a href="/app1/delete/?id={{ con.id }}">delete</a>
-	</td>
-  </tr>
-{% endfor%}
-</table>
-<table width="100%" height="20" border="0" cellpadding="0" cellspacing="0" class="mainlist3">
-<tr>
-	<td width="28%" height="31"></td>
-	<td width="68%"></td>
-</tr>
+    {{ form }}
+<tr><td><input type="submit" value="submit"/></td></tr>
 </table>
 </div>
-{% endif %} 
+</form>
 </body>
 </html>

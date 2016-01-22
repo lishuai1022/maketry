@@ -10,3 +10,5 @@ class try_carousel(models.Model):
     state = models.IntegerField(default=0)
     createdate = models.DateTimeField(default=timezone.now())
     modifydate = models.DateTimeField(default=timezone.now())
+
+
