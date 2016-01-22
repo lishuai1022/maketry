@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class try_carousel(models.Model):
     title = models.CharField(max_length=100)
-    img_url = models.CharField(max_length=256)
+    img_url = models.FileField(upload_to='./upload/')
     link_url = models.CharField(max_length=256)
     sort = models.IntegerField(default=0)
     type = models.IntegerField(default=0)

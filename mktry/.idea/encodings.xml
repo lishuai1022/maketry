@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app1/forms.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app1/models.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app1/templates/app1/list.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app1/templates/app1/update.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app1/urls.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app1/views.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mktry/settings.py" charset="UTF-8" />
+  </component>
+</project>

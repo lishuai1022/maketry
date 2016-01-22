@@ -10,12 +10,17 @@
     <script type="text/javascript" src="http://jic.makepolo.net/js/jquery/jquery-1.4.2.js"></script>
 </head>
 <body>
-<form action="/app1/update1/?id={{ id }}" method="post" enctype="multipart/form-data">
+<form action="/app1/update/?id={{ id }}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 <div class="maink">
 <table width="100%" border="0" cellspacing="0" cellpadding="10" class="listsearch">
-    {{ form }}
-<tr><td><input type="submit" value="submit"/></td></tr>
+    <tr><td>类型:</td><td><input name="type" type="text" value="{{ tc.type }}"></td></tr>
+    <tr><td>标题：</td><td><input name="title" type="text" value="{{ tc.title }}"></td></tr>
+    <tr><td>链接地址：</td><td><input name="link_url" type="text" value="{{ tc.link_url }}"></td></tr>
+    <tr><td>排序：</td><td><input name="sort" type="text" value="{{ tc.sort }}"></td></tr>
+    <tr><td>当前图片：</td><td><input name="img_url" type="text" value="{{ tc.img_url }}"></td></tr>
+    <tr><td>修改图片：</td><td><input name="upload_img" type="file"></td></tr>
+<tr><td><input type="submit" value="提交"/></td></tr>
 </table>
 </div>
 </form>

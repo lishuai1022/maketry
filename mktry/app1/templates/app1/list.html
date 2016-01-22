@@ -11,37 +11,38 @@
 </head>
 <body>
 
-<h1>img list</h1>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/app1/add/">add</a>
+<h1>内容列表</h1>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/app1/add/">添加</a>
 {% if content_list %}
 <div class="maink">
 <table width="100%" border="0" cellspacing="0" cellpadding="10" class="listsearch">
 <tr>
     <td>id</td>
-    <td>title</td>
-    <td>img_url</td>
-    <td>link_url</td>
-	<td>sort</td>
-    <td>type</td>
-    <td>state</td>
-	<td>createtime</td>
-	<td>modifytime</td>
-	<td>operate</td>
+    <td>标题</td>
+    <td>图片</td>
+    <td>链接地址</td>
+	<td>排序</td>
+    <td>类型</td>
+    <td>状态</td>
+	<td>创建时间</td>
+	<td>修改时间</td>
+	<td>操作</td>
   </tr>
 {% for con in content_list %}
   <tr>
     <td>{{con.id}}</td>
     <td>{{con.title}}</td>
-    <td><img src="http://jic.makepolo.net{{con.img_url}}" style="width:100px;height:50px"/></td>
+{#    <td><img src="/{{con.img_url}}" style="width:100px;height:50px"/></td>#}
+    <td>{{con.img_url}}</td>
 	<td>{{con.link_url}}</td>
 	<td>{{con.sort}}</td>
 	<td>{{ con.type }}</td>
 	<td>{{ con.state }}</td>
-	<td>{{con.createdate}}</td>
-	<td>{{con.modifydate}}</td>
+	<td>{{con.createdate|date:"Y-m-d H:i:s" }}</td>
+	<td>{{con.modifydate|date:"Y-m-d H:i:s" }}</td>
 	<td>
-	<a href="/app1/update/?id={{ con.id }}">update</a>&nbsp;&nbsp;
-	<a href="/app1/delete/?id={{ con.id }}">delete</a>
+	<a href="/app1/update/?id={{ con.id }}">修改</a>&nbsp;&nbsp;
+	<a href="/app1/delete/?id={{ con.id }}">删除</a>
 	</td>
   </tr>
 {% endfor%}
