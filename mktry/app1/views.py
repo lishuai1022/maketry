@@ -33,7 +33,7 @@ def delete(request):
     res = try_carousel.objects.get(id=id)
     res.state = 1
     res.save()
-    return HttpResponse(r'删除成功！')
+    return HttpResponse(r'删除成功！<a href="/app1/">返回首页</a>')
 
 def update(request):
     if request.POST:
@@ -50,5 +50,5 @@ def update(request):
         return render(request,'app1/update.html',{'tc':tc,'id':request.GET['id']})
 
 def list(request):
-    content_list = try_carousel.objects.all()
+    content_list = try_carousel.objects.filter(state=0)
     return render(request,'app1/list.html',{'content_list':content_list})
